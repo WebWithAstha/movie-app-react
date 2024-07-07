@@ -5,6 +5,7 @@ import Header from './partials/Header'
 import axios from '../utils/axios'
 import HorizontalCards from './partials/HorizontalCards'
 import DropDown from './partials/DropDown'
+import MainLoader from './partials/MainLoader'
 
 const Home = () => {
 
@@ -36,7 +37,7 @@ const Home = () => {
     !poster && getTrendingPoster()
   }, [category])
 
-  return (
+  return (trendings?
     <div className='w-full h-screen bg-slate-800 flex text-white'>
       <SideNav />
       <div className='flex-1 h-full px-8 bg-gradient-to-r overflow-x-hidden from-[#2a374b] via-[#406e77] to-[#417b78]'>
@@ -51,7 +52,7 @@ const Home = () => {
       </div>
 
     </div>
-  )
+  :<MainLoader/>)
 }
 
 export default Home

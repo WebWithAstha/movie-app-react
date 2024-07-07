@@ -1,7 +1,6 @@
 import React from 'react'
 
 const HorizontalCards = ({ data }) => {
-    console.log(data)
     return (data ?
         <div className='w-full py-2'>
             <div className="flex gap-4 items-center overflow-x-auto py-4 cursor-pointer">

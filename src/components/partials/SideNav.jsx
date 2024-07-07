@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SideNav = () => {
     return (
@@ -8,10 +9,12 @@ const SideNav = () => {
             </div>
             <div className="">
                 <h1 className='px-10 p-4 uppercase font-medium'>New Feeds</h1>
+                <Link to="/trending">
                 <div className="flex items-center gap-4 w-full px-10 cursor-pointer p-4 duration-300 hover:bg-[#406e77] hover:text-[#2a374b]">
                     <i className="text-xl fa-solid fa-fire"></i>
                     <h4 className='text-md uppercase'>Trending</h4>
                 </div>
+                </Link>
                 <div className="flex items-center gap-4 w-full px-10 cursor-pointer p-4 duration-300 hover:bg-[#406e77] hover:text-[#2a374b]">
                     <i className="text-xl fa-solid fa-wand-magic-sparkles"></i>
                     <h4 className='text-md uppercase'>Popular</h4>
