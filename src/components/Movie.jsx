@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 const Movie = () => {
 
     const [category, setcategory] = useState('popular')
-    // const [duration, setduration] = useState('day')
   const [movies, setmovies] = useState([])
   const [page, setpage] = useState(1)
   const [hasMore, sethasMore] = useState(true)

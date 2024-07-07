@@ -31,8 +31,6 @@ const Popular = () => {
         }
       }
       
-      console.log(popular)
-      
       const refreshHandler = ()=>{
         if(popular.length===0){
           getPopular()

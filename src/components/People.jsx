@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import TopNav from './partials/TopNav'
-import DropDown from './partials/DropDown'
 import axios from '../utils/axios'
 import VerticalCards from './partials/VerticalCards'
 import InfiniteScroll from 'react-infinite-scroll-component'
