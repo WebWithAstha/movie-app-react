@@ -15,22 +15,30 @@ const SideNav = () => {
                     <h4 className='text-md uppercase'>Trending</h4>
                 </div>
                 </Link>
+                <Link to="/popular">
                 <div className="flex items-center gap-4 w-full px-10 cursor-pointer p-4 duration-300 hover:bg-[#406e77] hover:text-[#2a374b]">
                     <i className="text-xl fa-solid fa-wand-magic-sparkles"></i>
                     <h4 className='text-md uppercase'>Popular</h4>
                 </div>
+                </Link>
+                <Link to="/movies">
                 <div className="flex items-center gap-4 w-full px-10 cursor-pointer p-4 duration-300 hover:bg-[#406e77] hover:text-[#2a374b]">
                     <i className="text-xl fa-solid fa-film"></i>
                     <h4 className='text-md uppercase'>Movies</h4>
                 </div>
+                </Link>
+                <Link to="tvshows">
                 <div className="flex items-center gap-4 w-full px-10 cursor-pointer p-4 duration-300 hover:bg-[#406e77] hover:text-[#2a374b]">
                     <i className="text-xl fa-solid fa-tv"></i>
                     <h4 className='text-md uppercase'>Tv Shows</h4>
                 </div>
+                </Link>
+                <Link to="/people">
                 <div className="flex items-center gap-4 w-full px-10 cursor-pointer p-4 duration-300 hover:bg-[#406e77] hover:text-[#2a374b]">
                     <i className="text-xl fa-solid fa-users"></i>
                     <h4 className='text-md uppercase'>People</h4>
                 </div>
+                </Link>
             </div>
             <div className="mt-2">
                 <h1 className='px-10 p-4 uppercase font-medium'>Our Info</h1>
