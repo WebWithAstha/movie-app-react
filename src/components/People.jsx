@@ -73,7 +73,7 @@ const People = () => {
             }
             >
 
-                <VerticalCards data={people} />
+                <VerticalCards data={people} title={category} />
             </InfiniteScroll>
 
         </div>

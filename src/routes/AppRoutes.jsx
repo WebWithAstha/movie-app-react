@@ -6,6 +6,7 @@ import Popular from '../components/Popular'
 import People from '../components/People'
 import Movie from '../components/Movie'
 import TvShow from '../components/TvShow'
+import MovieDetails from '../components/partials/MovieDetails'
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
         <Route path="/movies" element={<Movie />} />
         <Route path="/people" element={<People />} />
         <Route path="/tvshows" element={<TvShow />} />
+        <Route path="/:category/details/:id" element={<MovieDetails />} />
     </Routes>
   )
 }

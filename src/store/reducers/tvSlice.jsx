@@ -4,13 +4,13 @@ const tvSlice = createSlice({
     name: 'tv',
     initialState: {
         info: null,
-        reducers: {
-            loadTv: (state, action) => {
-                state.info = action.payload
-            },
-            resetTv: (state) => {
-                state.info = null
-            }
+    },
+    reducers: {
+        loadTv: (state, action) => {
+            state.info = action.payload
+        },
+        resetTv: (state) => {
+            state.info = null
         }
     }
 })

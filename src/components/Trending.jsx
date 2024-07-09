@@ -80,7 +80,7 @@ const Trending = () => {
         }
       >
 
-        <VerticalCards data={trendings} />
+        <VerticalCards data={trendings} title={category} />
       </InfiniteScroll>
 
     </div>

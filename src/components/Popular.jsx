@@ -77,7 +77,7 @@ const Popular = () => {
             }
             >
 
-                <VerticalCards data={popular} />
+                <VerticalCards data={popular} title={category} />
             </InfiniteScroll>
 
         </div>
