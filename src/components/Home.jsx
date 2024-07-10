@@ -48,7 +48,7 @@ const Home = () => {
         <DropDown title="Filter" options={["tv","movie","all"]} func={(e)=>setcategory(e.target.value)}/>
 
         </div>
-        <HorizontalCards data={trendings} />
+        <HorizontalCards data={trendings} imgWid={14} imgHei={10} />
       </div>
 
     </div>

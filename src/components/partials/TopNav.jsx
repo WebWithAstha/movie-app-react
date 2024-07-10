@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import axios from '../../utils/axios'
 import React, { useEffect, useState } from 'react'
 
@@ -22,8 +23,10 @@ const TopNav = () => {
         <button onClick={e => setquery('')} className=' px-2'>
           <i className="text-[#ffcc00] fa-solid fa-eraser"></i>
         </button>
-        <div className="absolute top-full left-0 w-full h-max max-h-56 overflow-y-auto shadow-xl overflow-hidden bg-[#4c8a9b]">
+        <div className="absolute z-[99] top-full left-0 w-full h-max max-h-56 overflow-y-auto shadow-xl overflow-hidden bg-[#4c8a9b]">
           {searches && searches.length > 0 ? searches.map((s,i) => (
+                <Link key={i} to={`/${s.media_type}/details/${s.id}`}>
+
 
             <div key={i} className="w-full cursor-pointer group bg-gradient-to-r from-[#2a374b] via-[#416e7b] to-[#417b78] bg-[length:200%_200%] duration-300 hover:bg-right py-4 px-4 flex items-center gap-4 text-white">
               <div className="img w-12 h-10 bg-slate-800">
@@ -34,6 +37,7 @@ const TopNav = () => {
                 <h2>{s.name || s.original_name || s.title}</h2>
               </div>
             </div>
+                </Link>
           )):''}
         </div>
       </div>
