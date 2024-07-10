@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { asyncLoadMovie } from '../../store/actions/movieAction'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom'
 
 import { resetMovie } from '../../store/actions/movieAction'
 import MainLoader from './MainLoader'
@@ -9,20 +9,16 @@ import HorizontalCards from './HorizontalCards'
 
 const MovieDetails = () => {
   const dispatch = useDispatch()
+  const {pathname} = useLocation()
   const navigate = useNavigate()
   const { id } = useParams()
   const { info } = useSelector(store => store.movieReducer)
-  if(info && info.extIds){
-    console.log("h bhai",info.extIds)
-  }else{
-    console.log("nhi h bhai")
-  }
   useEffect(() => {
     dispatch(asyncLoadMovie(id))
     return () => dispatch(resetMovie())
   }, [])
   return (info ?
-    <div className='px-10 w-full min-h-screen'
+    <div className='px-10 relative w-full min-h-screen'
       style={{
         backgroundImage: `
         linear-gradient(to bottom,black,transparent,black),
@@ -48,7 +44,6 @@ const MovieDetails = () => {
           </a> 
           <a target='_blank' href={`https://www.imdb.com/title/${info.extIds.imdb_id}`}>
             I<i className="fa-brands fa-mdb mr-6 text-xl cursor-pointer hover:text-[#fc0] duration-300"></i>
-            {/* <i className="fa-brands fa-imdb mr-6 text-xl cursor-pointer hover:text-[#fc0] duration-300"></i> */}
           </a> 
           <a target='_blank' href={`https://www.instagram.com/${info.extIds.instagram_id}`}>
             <i className="fa-brands fa-square-instagram mr-6 text-xl cursor-pointer hover:text-[#fc0] duration-300"></i>
@@ -82,7 +77,7 @@ const MovieDetails = () => {
             </div>
             <p className="text-lg w-[80%] text-white mt-2 leading-tight mb-2">{info.dets.overview}</p>
             <div className="btn">
-              <button className='px-12 py-3 my-2 text-xl uppercase bg-gradient-to-r bg-[length:300%_300%] hover:bg-right duration-300 from-[#2e3a4d] via-[#4a7e88] to-[#35605d] w-max'>Watch</button>
+              <button onClick={e=>navigate(`${pathname}/trailer/${"12"}`)} className='px-12 py-3 my-2 text-xl uppercase bg-gradient-to-r bg-[length:300%_300%] hover:bg-right duration-300 from-[#2e3a4d] via-[#4a7e88] to-[#35605d] w-max'>Watch</button>
             </div>
             <div className="flex gap-6">
 
@@ -130,6 +125,8 @@ const MovieDetails = () => {
 
         <HorizontalCards data={info.similar} rounded={false} imgWid={14} imgHei={10} />
       </div>
+
+      <Outlet/>
 
     </div>
     : <MainLoader />

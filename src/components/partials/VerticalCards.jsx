@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom'
 
 const VerticalCards = ({ data, title }) => {
 
-    console.log(title)
-    console.log(data[5].media_type)
-    console.log(data[5].id)
-
     return (
         <div className='w-full h-max grid grid-cols-4 gap-8 bg-gradient-to-r from-[#2a374b] via-[#406e77] to-[#417b78] text-white px-8 overflow-y-hidden'>
             {data.map((t, i) => (
@@ -18,7 +14,7 @@ const VerticalCards = ({ data, title }) => {
                     linear-gradient(to bottom,transparent,black),
                     url(https://image.tmdb.org/t/p/original/${t.backdrop_path || t.profile_path || t.poster_path})
                     `,
-                        backgroundPosition: "center top",
+                        backgroundPosition: "center",
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
                     }}

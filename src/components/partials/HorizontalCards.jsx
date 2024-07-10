@@ -1,7 +1,6 @@
 import React from 'react'
 
 const HorizontalCards = ({ data, imgWid,imgHei ,rounded}) => {
-    console.log(imgWid,imgHei)
     return (data ?
             <div className="flex gap-4 items-center overflow-x-auto py-4 cursor-pointer">
                 {data.map((t, i) => (
