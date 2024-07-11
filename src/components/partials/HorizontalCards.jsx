@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const HorizontalCards = ({ data,title}) => {
-    console.log(data[0].title)
     return (data ?
             <div className="flex gap-4 text-[#417b78] items-center overflow-x-auto py-4 cursor-pointer">
                 {data.map((t, i) => (
