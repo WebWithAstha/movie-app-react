@@ -4,8 +4,8 @@ import DropDown from './partials/DropDown'
 import axios from '../utils/axios'
 import VerticalCards from './partials/VerticalCards'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import MainLoader from './partials/MainLoader'
 import { Link } from 'react-router-dom'
+import CardLoader from './Loaders/CardLoader'
 
 
 const Movie = () => {
@@ -82,7 +82,7 @@ const Movie = () => {
             </InfiniteScroll>
 
         </div>
-    : <MainLoader/>
+    : <CardLoader/>
 
   )
 }

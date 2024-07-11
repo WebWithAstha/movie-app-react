@@ -5,6 +5,7 @@ import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-
 import MainLoader from './MainLoader'
 import HorizontalCards from './HorizontalCards'
 import { asyncLoadPerson, resetPerson } from '../../store/actions/personAction'
+import PersonLoader from '../Loaders/PersonLoader'
 
 const PersonDetails = () => {
   const dispatch = useDispatch()
@@ -55,27 +56,27 @@ const PersonDetails = () => {
       <div className='px-10 relative w-full h-max  min-h-40 bg-emerald-800/[0]'>
 
         <div className="w-full items-center justify-center flex gap-10">
-          <div className="img shadow-lg shrink-0 w-64 mb-10 rounded-lg overflow-hidden">
-            <img className='w-full object-contain' src={`https://image.tmdb.org/t/p/original/${info.dets.profile_path}`} alt="" />
+          <div className="img shadow-lg shrink-0 h-96 mb-10 rounded-lg overflow-hidden">
+            <img className='h-full object-contain' src={`https://image.tmdb.org/t/p/original/${info.dets.profile_path}`} alt="" />
           </div>
           <div className="dets w-[40vw]">
             <div className="top">
 
-              <h1 className='text-5xl font-semibold my-2'>{info.dets.name}</h1>
+              <h1 className='text-5xl font-semibold my-2 text-[#6ac2bd]'>{info.dets.name}</h1>
               <div className="flex justify-between items-center mt-4 py-2">
                 <h4 className="text-lg text-[#2a374b] font-semibold uppercase">Famous for</h4>
                 <span className="text-md font-semibold text-[#fc0] italic  ">{info.dets.known_for_department}</span>
               </div>
               <hr className='h-2 border-0 bg-[#417b78]' />
               <div className="flex justify-between items-center py-2">
-                <h4 className="text-lg text-[#2a374b] font-semibold uppercase">Birthday</h4>
+                <h4 className="text-lg text-[#2a374b] font-semibold uppercase">Date of Birth</h4>
                 <span className="text-md font-semibold text-[#fc0] italic  ">{info.dets.birthday}</span>
               </div>
               <hr className='h-2 border-0 bg-[#417b78]' />
               {info.dets.deathday ?
                 <>
                   <div className="flex justify-between items-center py-2">
-                    <h4 className="text-lg text-[#2a374b] font-semibold uppercase">Birthday</h4>
+                    <h4 className="text-lg text-[#2a374b] font-semibold uppercase">Date of Death</h4>
                     <span className="text-md font-semibold text-[#fc0] italic  ">{info.dets.deathday}</span>
                   </div>
                   <hr className='h-2 border-0 bg-[#417b78]' />
@@ -93,16 +94,16 @@ const PersonDetails = () => {
           </div>
         </div>
 
-        <h4 className='text-[#56809a] font-semibold text-xl mb-2 uppercase'>Biography</h4>
+        <h4 className=' text-[#6ac2bd]/[.5] font-semibold text-xl mb-2 uppercase'>Biography</h4>
         <p className='text-lg mb-4 '>{info.dets.biography.slice(0,340)} <span className='text-blue-600 font-normal'>. . . more</span> </p>
 
-        <h4 className='text-[#56809a] font-semibold text-xl mb-2 uppercase'>Know For</h4>
+        <h4 className=' text-[#6ac2bd]/[.5] font-semibold text-xl mb-2 uppercase'>Know For</h4>
         <HorizontalCards data={info.allCredits} />
 
 
       </div>
     </>
-    : <MainLoader />
+    : <PersonLoader />
   )
 
 

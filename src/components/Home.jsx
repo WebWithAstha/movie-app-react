@@ -5,7 +5,7 @@ import Header from './partials/Header'
 import axios from '../utils/axios'
 import HorizontalCards from './partials/HorizontalCards'
 import DropDown from './partials/DropDown'
-import MainLoader from './partials/MainLoader'
+import HomeLoader from './Loaders/HomeLoader'
 
 const Home = () => {
 
@@ -51,7 +51,7 @@ const Home = () => {
       </div>
 
     </div>
-  :<MainLoader/>)
+  :<HomeLoader/>)
 }
 
 export default Home

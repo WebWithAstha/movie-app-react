@@ -4,8 +4,8 @@ import { asyncLoadMovie } from '../../store/actions/movieAction'
 import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom'
 
 import { resetMovie } from '../../store/actions/movieAction'
-import MainLoader from './MainLoader'
 import HorizontalCards from './HorizontalCards'
+import MovieLoader from '../Loaders/MovieLoader'
 
 const MovieDetails = () => {
   const dispatch = useDispatch()
@@ -156,7 +156,7 @@ const MovieDetails = () => {
       <Outlet/>
 
     </div>
-    : <MainLoader />
+    : <MovieLoader/>
   )
 
 
