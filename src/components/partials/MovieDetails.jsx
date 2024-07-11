@@ -113,12 +113,15 @@ const MovieDetails = () => {
               }
             </div>
             <div className="mt-6"></div>
-            <h1 className=' text-lg font-bold uppercase'>Casts</h1>
-            <div className="flex gap-6 mt-4 overflow-x-auto pb-2">
+            <h1 className=' text-lg font-bold mb-2 uppercase'>Casts</h1>
+            <div className="flex gap-6 py-4 overflow-x-auto pb-2">
               {
                 info.cast ?
                 info.cast.map((t,i)=>(
-                  <div key={i} style={{
+                <Link key={i} to={`/person/details/${t.id}`}>
+
+                  
+                  <div style={{
                     backgroundImage: `
     linear-gradient(to bottom,transparent,black),
     url(https://image.tmdb.org/t/p/original/${t.backdrop_path || t.profile_path || t.poster_path})
@@ -133,20 +136,19 @@ const MovieDetails = () => {
                     <h1 className='text-xl font-semibold leading-tight'>{t.name || t.title}</h1>
                     
                     </div>
+                </Link>
+
                 ))
                   :'no cast data available'
               }
 
             </div>
 
-            {/* <HorizontalCards data={info.cast} /> */}
-
-
           </div>
 
         </div>
 
-        <h1 className='mt-6 text-2xl'>Recommended movies</h1>
+        <h1 className='mt-6 text-2xl'>Similar stuff</h1>
 
         <HorizontalCards data={info.similar} title={"movie"} />
       </div>
