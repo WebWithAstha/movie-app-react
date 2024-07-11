@@ -8,11 +8,13 @@ import Movie from '../components/Movie'
 import TvShow from '../components/TvShow'
 import MovieDetails from '../components/partials/MovieDetails'
 import Trailer from '../components/partials/Trailer'
+import MainLoader from '../components/partials/MainLoader'
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/a" element={<MainLoader />} />
       <Route path="/trending" element={<Trending />} />
       <Route path="/popular" element={<Popular />} />
       <Route path="/movies" element={<Movie />} />

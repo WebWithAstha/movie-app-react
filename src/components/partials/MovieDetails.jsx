@@ -16,7 +16,7 @@ const MovieDetails = () => {
   useEffect(() => {
     dispatch(asyncLoadMovie(id))
     return () => dispatch(resetMovie())
-  }, [])
+  }, [id])
   return (info ?
     <div className='px-10 relative w-full min-h-screen'
       style={{
@@ -65,8 +65,8 @@ const MovieDetails = () => {
 
         <div className="w-full flex">
 
-          <img className="h-[90vh] object-cover object-top" src={`https://image.tmdb.org/t/p/original/${info.dets.poster_path}`} alt="" />
-          <div className="content w-[60%] p-10">
+          <img className="h-[80vh] object-cover object-top" src={`https://image.tmdb.org/t/p/original/${info.dets.poster_path}`} alt="" />
+          <div className="content w-[70%] px-10">
 
             <h1 className="text-white text-5xl font-bold mb-4">{info.dets.title}</h1>
             <div className="flex gap-2 items-center">
@@ -75,9 +75,9 @@ const MovieDetails = () => {
                 info.dets.genres.map(g => <span key={g.id} className="text-sm text-white"> {"|  "} {g.name} </span>)
               }
             </div>
-            <p className="text-lg w-[80%] text-white mt-2 leading-tight mb-2">{info.dets.overview}</p>
+            <p className="text-lg w-[100%] text-white mt-2 leading-tight mb-2">{info.dets.overview}</p>
             <div className="btn">
-              <button onClick={e=>navigate(`${pathname}/trailer/${"12"}`)} className='px-12 py-3 my-2 text-xl uppercase bg-gradient-to-r bg-[length:300%_300%] hover:bg-right duration-300 from-[#2e3a4d] via-[#4a7e88] to-[#35605d] w-max'>Watch</button>
+              <button onClick={e=>navigate(`${pathname}/trailer/${id}`)} className='px-12 py-3 my-2 text-xl uppercase bg-gradient-to-r bg-[length:300%_300%] hover:bg-right duration-300 from-[#2e3a4d] via-[#4a7e88] to-[#35605d] w-max'>Watch</button>
             </div>
             <div className="flex gap-6">
 
@@ -114,16 +114,41 @@ const MovieDetails = () => {
             </div>
             <div className="mt-6"></div>
             <h1 className=' text-lg font-bold uppercase'>Casts</h1>
+            <div className="flex gap-6 mt-4 overflow-x-auto pb-2">
+              {
+                info.cast ?
+                info.cast.map((t,i)=>(
+                  <div key={i} style={{
+                    backgroundImage: `
+    linear-gradient(to bottom,transparent,black),
+    url(https://image.tmdb.org/t/p/original/${t.backdrop_path || t.profile_path || t.poster_path})
+    `,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    objectFit:"cover"
+                }}
+                    className={`trend-box shrink-0 p-4 w-36 h-36 rounded cursor-pointer hover:-mt-4 duration-300 shadow flex flex-col justify-end bg-gradient-to-tr from-[#2e3a4d] via-[#4a7e88] to-[#35605d]`}>
+  
+                    <h1 className='text-xl font-semibold leading-tight'>{t.name || t.title}</h1>
+                    
+                    </div>
+                ))
+                  :'no cast data available'
+              }
 
-            <HorizontalCards data={info.cast} rounded={true} imgWid={10} imgHei={10} />
+            </div>
+
+            {/* <HorizontalCards data={info.cast} /> */}
 
 
           </div>
 
         </div>
+
         <h1 className='mt-6 text-2xl'>Recommended movies</h1>
 
-        <HorizontalCards data={info.similar} rounded={false} imgWid={14} imgHei={10} />
+        <HorizontalCards data={info.similar} title={"movie"} />
       </div>
 
       <Outlet/>

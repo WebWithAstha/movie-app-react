@@ -38,7 +38,7 @@ const Home = () => {
   }, [category])
 
   return (trendings?
-    <div className='w-full h-screen bg-slate-800 flex text-white'>
+    <div className='w-full h-screen flex text-white'>
       <SideNav />
       <div className='flex-1 h-full px-8 bg-gradient-to-r overflow-x-hidden from-[#2a374b] via-[#406e77] to-[#417b78]'>
         <TopNav />
@@ -46,9 +46,8 @@ const Home = () => {
         <div className='flex mt-8 px-1 justify-between items-center'>
         <h1 className=' text-lg uppercase'>Trending</h1>
         <DropDown title="Filter" options={["tv","movie","all"]} func={(e)=>setcategory(e.target.value)}/>
-
         </div>
-        <HorizontalCards data={trendings} imgWid={14} imgHei={10} />
+        <HorizontalCards data={trendings} />
       </div>
 
     </div>
