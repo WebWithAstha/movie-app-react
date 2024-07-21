@@ -49,12 +49,12 @@ const People = () => {
 
     return ( people.length>0?
         <div className='w-full min-h-screen bg-gradient-to-r from-[#2a374b] via-[#406e77] to-[#417b78]'>
-            <div className="px-8 py-4 flex items-center justify-between">
+            <div className="px-8 py-4 flex sm:flex-row flex-col sm:items-center justify-between">
                 <div className="flex items-center text-[#417b78]">
                   <Link to="/">
-                <i className="fa-solid fa-arrow-left-long mr-6 text-2xl cursor-pointer hover:text-[#fc0] duration-300"></i>
+                <i className="fa-solid fa-arrow-left-long mr-2 sm:mr-6 sm:text-2xl cursor-pointer hover:text-[#fc0] duration-300"></i>
                   </Link>
-                <h1 className=' text-xl uppercase font-bold'>People</h1>
+                <h1 className=' sm:text-xl text-sm uppercase font-bold flex sm:flex-row flex-col sm:items-center sm:gap-1 text-nowrap'>People</h1>
                     <TopNav />
                 </div>
                

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const SideNav = () => {
     return (
-        <div className='w-72 bg-[#2a374b] overflow-hidden h-full border-r text-[#417b78] border-[#406e77]'>
+        <div className='w-72 sm:block hidden bg-[#2a374b] overflow-hidden h-full border-r text-[#417b78] border-[#406e77]'>
             <div className="logo w-full px-10 py-10 text-2xl">
                 <img className='inline-block w-8 -mt-2' src="https://cdn-icons-png.flaticon.com/512/6024/6024205.png" alt="" /> <span className='text-[#ffcc00]'>AL</span>DB
             </div>

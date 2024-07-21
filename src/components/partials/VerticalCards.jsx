@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const VerticalCards = ({ data, title }) => {
 
     return (
-        <div className='w-full h-max grid grid-cols-4 gap-8 bg-gradient-to-r from-[#2a374b] via-[#406e77] to-[#417b78] text-white px-8 overflow-y-hidden'>
+        <div className='w-full h-max grid sm:grid-cols-4 gap-8 bg-gradient-to-r from-[#2a374b] via-[#406e77] to-[#417b78] text-white px-8 overflow-y-hidden'>
             {data.map((t, i) => (
                 <Link key={i} to={`/${t.media_type || title}/details/${t.id}`}>
 

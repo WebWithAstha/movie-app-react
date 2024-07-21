@@ -18,7 +18,7 @@ const MovieDetails = () => {
     return () => dispatch(resetMovie())
   }, [id])
   return (info ?
-    <div className='px-10 relative w-full min-h-screen'
+    <div className='sm:px-10 relative w-full min-h-screen overflow-x-hidden'
       style={{
         backgroundImage: `
         linear-gradient(to bottom,black,transparent,black),
@@ -31,7 +31,7 @@ const MovieDetails = () => {
 
     >
 
-      <nav className='w-full px-10 py-8 flex items-center justify-between gap-6 text-[#6ac2bd]'>
+      <nav className='w-full px-10 py-8 flex items-center justify-between gap-2 sm:gap-6 text-[#6ac2bd]'>
         <Link onClick={e=>navigate(-1)}>
           <i className="fa-solid fa-arrow-left-long mr-6 text-2xl  cursor-pointer hover:text-[#fc0] duration-300"></i>
         </Link>
@@ -61,11 +61,12 @@ const MovieDetails = () => {
       
       </nav>
 
-      <div className="wrap backdrop-blur-md text-[#6ac2bd] px-10">
+      <div className="wrap backdrop-blur-md text-[#6ac2bd] px-8 sm:px-10">
 
-        <div className="w-full flex">
-
-          <img className="h-[80vh] object-cover object-top" src={`https://image.tmdb.org/t/p/original/${info.dets.poster_path}`} alt="" />
+        <div className="w-full flex sm:flex-row flex-col">
+        <div className="img sm:min-w-96 w-full h-[70vh] sm:h-[80vh]">
+          <img className="h-[70vh] sm:h-[80vh] object-cover object-top" src={`https://image.tmdb.org/t/p/original/${info.dets.poster_path}`} alt="" />
+        </div>
           <div className="content w-[70%] px-10">
 
             <h1 className="text-white text-5xl font-bold mb-4">{info.dets.title}</h1>
@@ -76,9 +77,14 @@ const MovieDetails = () => {
               }
             </div>
             <p className="text-lg w-[100%] text-white mt-2 leading-tight mb-2">{info.dets.overview}</p>
-            <div className="btn">
+            
+            {
+              info.video ?
+              <div className="btn">
               <button onClick={e=>navigate(`${pathname}/trailer/${id}`)} className='px-12 py-3 my-2 text-xl uppercase bg-gradient-to-r bg-[length:300%_300%] hover:bg-right duration-300 from-[#2e3a4d] via-[#4a7e88] to-[#35605d] w-max'>Watch</button>
             </div>
+            :''
+            }
             <div className="flex gap-6">
 
               {

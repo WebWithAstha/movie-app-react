@@ -6,6 +6,7 @@ import axios from '../utils/axios'
 import HorizontalCards from './partials/HorizontalCards'
 import DropDown from './partials/DropDown'
 import HomeLoader from './Loaders/HomeLoader'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
@@ -41,6 +42,11 @@ const Home = () => {
     <div className='w-full h-screen flex text-white'>
       <SideNav />
       <div className='flex-1 h-full px-8 bg-gradient-to-r overflow-x-hidden from-[#2a374b] via-[#406e77] to-[#417b78]'>
+      <Link className='sm:hidden block mt-6' to="/">
+       <div className="logo text-xl">
+                <img className='w-8 hidden' src="https://cdn-icons-png.flaticon.com/512/6024/6024205.png" alt="" /> <span className='text-[#ffcc00]'>AL</span>DB
+            </div>
+      </Link>
         <TopNav />
         <Header poster={poster} />
         <div className='flex mt-8 px-1 justify-between items-center'>

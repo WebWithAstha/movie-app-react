@@ -10,12 +10,12 @@ export const asyncLoadTv = (id)=>(async (dispatch,getState)=>{
     // const translations = await axios.get(`/tv/${id}/translations`)
     const watchProviders = await axios.get(`/tv/${id}/watch/providers`)
     const videos = await axios.get(`/tv/${id}/videos`)
+    console.log(videos)
     let info = {
         dets:dets.data,
         cast:cast.data.cast,
         extIds:extId.data,
         similar:similar.data.results,
-        // translations:translations.data.translations.map(t=>t.english_name),
         watchProviders:watchProviders.data.results.IN,
         video:videos.data.results.find(v=>v.type==='Trailer')
     }

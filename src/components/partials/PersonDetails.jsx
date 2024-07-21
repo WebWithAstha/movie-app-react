@@ -19,12 +19,9 @@ const PersonDetails = () => {
     return () => dispatch(resetPerson())
   }, [id])
 
-
-  console.log(info && info)
-
   return (info ?
     <>
-      <nav className='w-full px-10 py-8 flex items-center justify-between gap-6 text-[#6ac2bd]'>
+      <nav className='w-full px-10 py-8 flex items-center justify-between gap-2 sm:gap-6 text-[#6ac2bd]'>
         <Link onClick={e => navigate(-1)}>
           <i className="fa-solid fa-arrow-left-long mr-6 text-2xl  cursor-pointer hover:text-[#fc0] duration-300"></i>
         </Link>
@@ -53,13 +50,14 @@ const PersonDetails = () => {
 
 
       </nav>
+
       <div className='px-10 relative w-full h-max  min-h-40 bg-emerald-800/[0]'>
 
-        <div className="w-full items-center justify-center flex gap-10">
-          <div className="img shadow-lg shrink-0 h-96 mb-10 rounded-lg overflow-hidden">
+        <div className="w-full items-center justify-center flex sm:flex-row flex-col gap-2 sm:gap-10">
+          <div className="img shadow-lg shrink-0 sm:h-96 sm:mb-10 rounded-lg overflow-hidden">
             <img className='h-full object-contain' src={`https://image.tmdb.org/t/p/original/${info.dets.profile_path}`} alt="" />
           </div>
-          <div className="dets w-[40vw]">
+          <div className="dets sm:w-[40vw]">
             <div className="top">
 
               <h1 className='text-5xl font-semibold my-2 text-[#6ac2bd]'>{info.dets.name}</h1>
