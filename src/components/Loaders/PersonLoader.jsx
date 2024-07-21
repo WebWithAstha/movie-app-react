@@ -7,9 +7,9 @@ const PersonLoader = () => {
                 <div className="w-40 h-8 bg-zinc-300/[.2]"></div>
                 <div className="w-56 h-8 bg-zinc-300/[.2]"></div>
             </div>
-            <div className="flex w-full mb-10 justify-center gap-10 items-center">
+            <div className="flex md:flex-row flex-col w-full mb-10 justify-center gap-10 items-center">
                 <div className="h-96 w-64 bg-zinc-300/[.2]"></div>
-                <div className="lf w-[28vw]">
+                <div className="lf w-64 md:w-[28vw]">
                         <div className="w-full h-4 mb-4 bg-zinc-300/[.2]"></div>
                         <div className="w-full h-4 mb-4 bg-zinc-300/[.2]"></div>
                         <div className="w-full h-4 mb-4 bg-zinc-300/[.2]"></div>

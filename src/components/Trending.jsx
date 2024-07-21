@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import TopNav from './partials/TopNav'
+import TopNav from './partials/SearchBar'
 import DropDown from './partials/DropDown'
 import axios from '../utils/axios'
 import VerticalCards from './partials/VerticalCards'
@@ -9,17 +9,18 @@ import CardLoader from './Loaders/CardLoader'
 
 
 const Trending = () => {
-
+  
+  
   const [category, setcategory] = useState('all')
   const [duration, setduration] = useState('day')
   const [trendings, settrendings] = useState([])
   const [page, setpage] = useState(1)
   const [hasMore, sethasMore] = useState(true)
-
-
+  
+  
   const getTrending = async () => {
     try {
-
+      
       const { data } = await axios.get(`/trending/${category}/${duration}?page=${page}`)
       if (data.results.length > 0) {
         setpage(page + 1)
@@ -42,17 +43,18 @@ const Trending = () => {
       getTrending()
     }
   }
-
-
+  
+  
 
   useEffect(() => {
     refreshHandler()
+    document.title=`${category.charAt(0).toUpperCase() + category.slice(1)} Trendings | ALDB`
   }, [category, duration])
 
 
   return (trendings.length > 0 ?
     <div className='w-full min-h-screen bg-gradient-to-r from-[#2a374b] via-[#406e77] to-[#417b78]'>
-      <div className="px-8 py-4 flex sm:flex-row flex-col sm:items-center justify-between">
+      <div className="px-8 py-4 flex lg:flex-row flex-col lg:items-center justify-between">
         <div className="flex items-center text-[#417b78]">
           <Link to="/">
             <i className="fa-solid fa-arrow-left-long mr-2 sm:mr-6 sm:text-2xl cursor-pointer hover:text-[#fc0] duration-300"></i>

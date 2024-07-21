@@ -7,8 +7,8 @@ const MovieLoader = () => {
                 <div className="w-40 h-8 bg-zinc-300/[.2]"></div>
                 <div className="w-56 h-8 bg-zinc-300/[.2]"></div>
             </div>
-            <div className="flex w-full px-10 gap-10">
-                <div className="bg-zinc-300/[.2] h-[80vh] w-[25vw]"></div>
+            <div className="flex md:flex-row flex-col w-full px-10 gap-10">
+                <div className="bg-zinc-300/[.2] h-[60vh] md:h-[80vh] md:w-[25vw]"></div>
                 <div className="lf flex-1 pr-40">
                     <div className="w-1/2 h-8 bg-zinc-300/[.2]"></div>
                     <div className="w-1/5 mt-4 h-4 bg-zinc-300/[.2]"></div>

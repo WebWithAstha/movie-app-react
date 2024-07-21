@@ -68,14 +68,14 @@ const TvDetails = () => {
         </div>
           <div className="content sm:w-[70%] sm:px-10">
 
-            <h1 className="text-white text-5xl font-bold mb-4">{info.dets.title || info.dets.name}</h1>
+            <h1 className="text-white text-3xl mt-4 md:mt-0 md:text-5xl font-bold mb-4">{info.dets.title || info.dets.name}</h1>
             <div className="flex gap-2 items-center">
               Genre
               {
                 info.dets.genres.map(g => <span key={g.id} className="text-sm text-white"> {"|  "} {g.name} </span>)
               }
             </div>
-            <p className="text-lg w-[100%] text-white mt-2 leading-tight mb-2">{info.dets.overview}</p>
+            <p className="md:text-lg w-[100%] text-white mt-2 leading-tight mb-2">{info.dets.overview}</p>
             {
               info.video ?
                 <div className="btn">

@@ -8,7 +8,7 @@ const CardLoader = () => {
           <div className="w-56 h-8 bg-zinc-300/[.2]"></div>
 
         </div>
-        <div className='w-full h-max grid grid-cols-4 gap-8 px-8 overflow-y-hidden'>
+        <div className='w-full h-max grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8  px-8 overflow-y-hidden'>
 
           <div className="h-72 shrink-0 bg-zinc-400/[.2]"></div>
           <div className="h-72 shrink-0 bg-zinc-400/[.2]"></div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import TopNav from './partials/TopNav'
+import TopNav from './partials/SearchBar'
 import axios from '../utils/axios'
 import VerticalCards from './partials/VerticalCards'
 import InfiniteScroll from 'react-infinite-scroll-component'
@@ -8,6 +8,8 @@ import CardLoader from './Loaders/CardLoader'
 
 
 const People = () => {
+  document.title=`People | ALDB`
+
 
   const [people, setpeople] = useState([])
   const [page, setpage] = useState(1)
@@ -49,7 +51,7 @@ const People = () => {
 
     return ( people.length>0?
         <div className='w-full min-h-screen bg-gradient-to-r from-[#2a374b] via-[#406e77] to-[#417b78]'>
-            <div className="px-8 py-4 flex sm:flex-row flex-col sm:items-center justify-between">
+            <div className="px-8 py-4 flex lg:flex-row flex-col lg:items-center justify-between">
                 <div className="flex items-center text-[#417b78]">
                   <Link to="/">
                 <i className="fa-solid fa-arrow-left-long mr-2 sm:mr-6 sm:text-2xl cursor-pointer hover:text-[#fc0] duration-300"></i>
