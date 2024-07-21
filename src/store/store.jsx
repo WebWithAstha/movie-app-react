@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import MovieSlice from "./reducers/MovieSlice";
+import MovieSlice from "./reducers/MovieSlice.jsx";
 import tvSlice from "./reducers/tvSlice";
 import personSlice from "./reducers/personSlice";
 
