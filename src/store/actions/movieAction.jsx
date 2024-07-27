@@ -1,6 +1,6 @@
-export { resetMovie } from "../reducers/MovieSlice";
+export { resetMovie } from "../reducers/Movie-Slice";
 import axios from "../../utils/axios";
-import { loadMovie } from "../reducers/MovieSlice";
+import { loadMovie } from "../reducers/Movie-Slice";
 
 export const asyncLoadMovie = (id)=>(async (dispatch,getState)=>{
     const dets = await axios.get(`/movie/${id}`)
